@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  {% if title %}
+    <title>{{ title }}-Saimon Properties Ltd</title>
+  {% else %}
+    <title>Saimon Properties Ltd</title>
+  {% endif %}
+  <!-- Bootstrap core CSS -->
+<!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+  <link rel="stylesheet" href="{%static 'spl_home/css/main.css' %}">
+  <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}">
+
+  <!-- Custom styles for this template -->
+  <link type="text/css" href="{%static 'spl_home/css/business.css' %}" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="{%static 'spl_home/css/animate.css' %}">
+</head>
+
+<body class="backg">
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-nav-color fixed-top">
+    <div class="container">
+      <a class="navbar-brand log pl-0 ml-0" href="{% url 'site-home' %}"><img style="max-width: 50px; max-height: 65px" class="img-thumbnail mr-2 pt-0" src="{%static 'spl_home/img/logo.jpg' %}"> Saimon Properties Ltd</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav nv ml-auto">
+          <li class="nav-item">
+            <a class="nav-link nv-el" href="{% url 'site-about' %}">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nv-el" href="{% url 'site-ongoing-projects' %}">Ongoing projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nv-el" href="{% url 'site-upcoming-projects' %}">Upcoming Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nv-el" href="{% url 'site-completed-projects' %}">Completed Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nv-el" href="{% url 'site-contact' %}">Contact Us</a>
+          </li>
+
+          <!--<li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Other Pages
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+              <a class="dropdown-item" href="full-width.html">Full Width Page</a>
+              <a class="dropdown-item" href="sidebar.html">Sidebar Page</a>
+              <a class="dropdown-item" href="faq.html">FAQ</a>
+              <a class="dropdown-item" href="404.html">404</a>
+              <a class="dropdown-item" href="pricing.html">Pricing Table</a>
+            </div>
+          </li>-->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  {% block content %}{% endblock content %}
+  <footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>

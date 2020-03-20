@@ -1,0 +1,82 @@
+{% extends "spl_home/base.html" %}
+{% block content %}
+  <div class="container bg-container-color shadow">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3 pt-3">Ongoing
+      <small>projects</small>
+    </h1>
+
+    <ol class="breadcrumb bg-dir-color text-white">
+      <li class="breadcrumb-item">
+        <a class="font-weight-bold text-black" href="{% url 'site-home' %}">Home</a>
+      </li>
+      <li class="breadcrumb-item active text-white">Ongoing projects</li>
+    </ol>
+    {% for page_ob in page_obj %}
+    <!-- Project One -->
+    <div class="row">
+      <div class="col-md-5 col-sm-12 d-flex justify-content-center">
+        <a href="#">
+          <img class="img-fluid rounded mb-3 mb-md-0 pb-5 pt-3" width="300px" src="{{ page_ob.ogp_img.url }}" alt="">
+        </a>
+      </div>
+      <div class="col-md-7 pb-5 pt-2">
+        <!--<h3>{{ ongoing_detail.project_name }}</h3>-->
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="alert alert-primary" scope="col"><h5 class="font-weight-bold">{{ page_ob.project_name }}</h5></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Location:</th>
+              <td>{{ page_ob.location }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Unit size:</th>
+              <td>{{ page_ob.unit_size }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Expected completion:</th>
+              <td>{{ page_ob.expected_completion }}</td>
+            </tr>
+            <tr>
+              <th><br><a class="btnb mt-5 p-3" href="#">View Project</a></th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- /.row -->
+    {% endfor %}
+
+
+    <hr>
+
+    <!-- Pagination -->
+    <div class="d-flex justify-content-center pt-4">
+      {% if page_obj.has_previous %}
+        <a class="btn btn-outline-dark btn-secondary pr-3 mr-1 mb-4 bton" href="?page=1">Latest</a>
+        <a class="btn btn-outline-dark btn-secondary pr-3 mr-1 mb-4 bton" href="?page={{ page_obj.previous_page_number}}">Previous</a>
+      {% endif%}
+
+      {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+            <a class="btn btn-dark pr-3 mr-1 mb-4 bton" href="?page={{ num }}">{{ num }}</a>
+        {% elif num > page_obj.number|add:'-1' and num < page_obj.number|add:'1'%}
+            <a class="btn btn-outline-dark pr-3 mr-1 mb-4 bton" href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if page_obj.has_next %}
+        <a class="btn btn-outline-dark btn-secondary pr-3 mr-1 mb-4 bton" href="?page={{ page_obj.next_page_number}}">Next</a>
+        <a class="btn btn-outline-dark btn-secondary pr-3 mr-1 mb-4 bton" href="?page={{ page_obj.paginator.num_pages }}">Oldest</a>
+      {% endif%}
+    </div>
+
+  </div>
+  <!-- /.container -->
+
+{% endblock content %}

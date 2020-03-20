@@ -1,0 +1,14 @@
+$blue:    #004080;
+$body-bg: #1a8cff;
+$enable-gradients: true;
+
+$theme-colors: (
+  "nav-color": rgb(0,0,77,.8)/* #004080 */,
+  "dir-color": #6c8c90,/* #204060, */
+  "paginate-color": #F05F20,
+  "read-more-color": #F87217,
+  "container-color": #e4dcc4/* #bcc4bc */,
+  "card-color": #FF9C33
+
+);
+@import "node_modules/bootstrap/scss/bootstrap";

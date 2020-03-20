@@ -1,0 +1,78 @@
+{% extends "spl_home/base.html" %}
+{% block content %}
+  <!-- Page Content -->
+  <div class="container shadow">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3 pt-3">Completed
+      <small>Projects</small>
+    </h1>
+
+    <ol class="breadcrumb bg-dir-color text-white">
+      <li class="breadcrumb-item">
+        <a class="font-weight-bold text-black" href="{% url 'site-home' %}">Home</a>
+      </li>
+      <li class="breadcrumb-item active text-white">Completed Projects</li>
+    </ol>
+
+    <div class="card-deck row">
+      {% for page_ob in page_obj %}
+        <div class="col-xs-12 col-lg-6 p-4 border-4">
+        <!-- Card -->
+        <div class="card bg-card-color">
+
+          <!--Card image-->
+          <div class="view overlay">
+            <img class="card-img-top" height="600" src="{{ page_ob.cp_img.url }}" alt="Card image cap">
+            <a href="#!">
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+
+          <!--Card content-->
+          <div class="card-body">
+
+            <!--Title-->
+            <h4 class="card-title">{{ page_ob.project_name }}</h4>
+            <!--Text-->
+            <p class="card-text ">{{ page_ob.location }}</p>
+            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+            <button type="button" class="btn btn-dark btn-md">Read more</button>
+
+          </div>
+
+        </div>
+        </div>
+      {% endfor %}
+    </div>
+    <!-- /.row -->
+    <div class="d-flex justify-content-center pt-4">
+      {% if page_obj.has_previous %}
+          <a class="btn btn-outline-dark pr-3 mr-1 mb-4 bton" href="?page=1">Latest</a>
+          <a class="btn btn-outline-dark pr-3 mr-1 mb-4 bton" href="?page={{ page_obj.previous_page_number}}">Previous</a>
+      {% endif%}
+
+      {% for num in page_obj.paginator.page_range %}
+          {% if page_obj.number == num %}
+              <a class="btn btn-dark pr-3 mr-1 mb-4 bton" href="?page={{ num }}">{{ num }}</a>
+          {% elif num > page_obj.number|add:'-1' and num < page_obj.number|add:'1'%}
+              <a class="btn btn-outline-dark pr-3 mr-1 mb-4 bton" href="?page={{ num }}">{{ num }}</a>
+          {% endif %}
+      {% endfor %}
+
+      {% if page_obj.has_next %}
+          <a class="btn btn-outline-dark btn-secondary pr-3 mr-1 mb-4 bton" href="?page={{ page_obj.next_page_number}}">Next</a>
+          <a class="btn btn-outline-dark btn-secondary pr-3 mr-1 mb-4 bton" href="?page={{ page_obj.paginator.num_pages }}">Oldest</a>
+      {% endif%}
+    </div>
+
+  </div>
+    <!-- /.row -->
+
+    <!-- Pagination -->
+
+  <!-- /.container -->
+
+
+
+{% endblock content %}

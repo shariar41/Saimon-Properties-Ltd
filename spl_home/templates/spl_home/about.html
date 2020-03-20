@@ -1,0 +1,112 @@
+{% extends "spl_home/base.html" %}
+{% load static %}
+{% block content %}
+  <!-- Page Content -->
+  <div class="container bg-container-color shadow">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3 pt-3">About
+      <small>Subheading</small>
+    </h1>
+
+    <ol class="breadcrumb bg-dir-color text-white">
+      <li class="breadcrumb-item">
+        <a class="font-weight-bold text-black" href="{% url 'site-home' %}">Home</a>
+      </li>
+      <li class="breadcrumb-item active text-white">About</li>
+    </ol>
+
+    <!-- Intro Content -->
+    <div class="row">
+      <div class="col-lg-6">
+        <img class="img-fluid rounded mb-4" src="{%static 'spl_home/img/5.jpg' %}" alt="">
+      </div>
+      <div class="col-lg-6">
+        <h2>About Modern Business</h2>
+        <p>Saimon Properties is not only a name in Real Estate mearket but also an idea and dream of many clients. Our Architects are extremely professional.Moreover, we are very selective before starting a project and these factors are </p>
+        <ul>
+          <li>
+            Suitable Locations
+          </li>
+          <li>Advance Amenities</li>
+          <li>Facilities</li>
+          <li>Quality products</li>
+          <li>Time</li>
+        </ul>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Team Members -->
+    <h2>Our Team</h2>
+
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100 text-center">
+          <img class="card-img-top" src="http://placehold.it/750x450" alt="">
+          <div class="card-body">
+            <h4 class="card-title">Team Member</h4>
+            <h6 class="card-subtitle mb-2 text-muted">Position</h6>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
+          </div>
+          <div class="card-footer">
+            <a href="#">name@example.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100 text-center">
+          <img class="card-img-top" src="http://placehold.it/750x450" alt="">
+          <div class="card-body">
+            <h4 class="card-title">Team Member</h4>
+            <h6 class="card-subtitle mb-2 text-muted">Position</h6>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
+          </div>
+          <div class="card-footer">
+            <a href="#">name@example.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100 text-center">
+          <img class="card-img-top" src="http://placehold.it/750x450" alt="">
+          <div class="card-body">
+            <h4 class="card-title">Team Member</h4>
+            <h6 class="card-subtitle mb-2 text-muted">Position</h6>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
+          </div>
+          <div class="card-footer">
+            <a href="#">name@example.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Our Customers -->
+    <h2>Our Customers</h2>
+    <div class="row">
+      <div class="col-lg-2 col-sm-4 mb-4">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+      </div>
+      <div class="col-lg-2 col-sm-4 mb-4">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+      </div>
+      <div class="col-lg-2 col-sm-4 mb-4">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+      </div>
+      <div class="col-lg-2 col-sm-4 mb-4">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+      </div>
+      <div class="col-lg-2 col-sm-4 mb-4">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+      </div>
+      <div class="col-lg-2 col-sm-4 mb-4">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+      </div>
+    </div>
+    <!-- /.row -->
+
+  </div>
+
+{% endblock content %}
